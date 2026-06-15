@@ -1,0 +1,174 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-lg) 0;
+  min-height: 72vh;
+  width: 100%;
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.progressHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: 0 var(--spacing-xs);
+}
+
+.progressText {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.progressBarBg {
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-border);
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.questionCard {
+  padding: var(--spacing-xl) !important;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.questionHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.stepIcon {
+  color: var(--color-primary);
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.stepTitle {
+  font-size: calc(var(--font-size-xl) * var(--font-scale));
+  font-weight: 700;
+  margin: 0;
+}
+
+.stepDescription {
+  font-size: calc(var(--font-size-base) * var(--font-scale));
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.divider {
+  border: 0;
+  border-top: 1.5px solid var(--color-border);
+  margin: var(--spacing-xs) 0;
+}
+
+.questionContent {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: var(--spacing-sm) 0;
+}
+
+.optionGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.optionBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+  border: 2px solid var(--color-border);
+  background-color: var(--color-surface);
+  cursor: pointer;
+  text-align: left;
+  transition: var(--transition-normal);
+  width: 100%;
+}
+
+.optionBtn:hover {
+  border-color: var(--color-primary);
+  background-color: rgba(46, 94, 78, 0.04);
+}
+
+.selected {
+  border-color: var(--color-primary) !important;
+  background-color: rgba(46, 94, 78, 0.08) !important;
+}
+
+[data-theme='dark'] .selected {
+  background-color: rgba(143, 191, 160, 0.12) !important;
+}
+
+.optLabel {
+  font-weight: 700;
+  color: var(--color-text-primary);
+  font-size: calc(var(--font-size-base) * var(--font-scale));
+}
+
+.optDesc {
+  font-size: calc(var(--font-size-xs) * var(--font-scale));
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.sliderWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.calcContext {
+  font-size: calc(var(--font-size-xs) * var(--font-scale));
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  margin-top: var(--spacing-xs);
+}
+
+.errorBanner {
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  font-size: calc(var(--font-size-sm) * var(--font-scale));
+}
+
+.navigationControls {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.navBtn {
+  flex: 1;
+}

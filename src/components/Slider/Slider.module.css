@@ -1,0 +1,104 @@
+.sliderContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacing-lg);
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.label {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: calc(var(--font-size-base) * var(--font-scale));
+}
+
+.value {
+  font-size: calc(var(--font-size-sm) * var(--font-scale));
+  font-weight: 700;
+  color: var(--color-primary);
+  background-color: rgba(46, 94, 78, 0.15);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+  min-width: 3rem;
+  text-align: center;
+}
+
+[data-theme='dark'] .value {
+  background-color: rgba(143, 191, 160, 0.2);
+  color: var(--color-primary);
+}
+
+.inputWrapper {
+  width: 100%;
+  position: relative;
+}
+
+.rangeInput {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: var(--border-radius-full);
+  background: linear-gradient(
+    to right,
+    var(--color-primary) 0%,
+    var(--color-primary) var(--percentage, 0%),
+    var(--color-border) var(--percentage, 0%),
+    var(--color-border) 100%
+  );
+  outline: none;
+  transition: var(--transition-normal);
+}
+
+/* Chrome/Safari Slider Thumb */
+.rangeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-surface);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.rangeInput::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background-color: var(--color-primary-hover);
+}
+
+/* Firefox Slider Thumb */
+.rangeInput::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-surface);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.rangeInput::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  background-color: var(--color-primary-hover);
+}
+
+.rangeBounds {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.bound {
+  font-size: calc(var(--font-size-xs) * var(--font-scale));
+  color: var(--color-text-secondary);
+}

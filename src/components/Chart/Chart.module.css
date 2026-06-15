@@ -1,0 +1,95 @@
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.visualSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  width: 100%;
+  padding: var(--spacing-md) 0;
+}
+
+@media (min-width: 768px) {
+  .visualSection {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.donut {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-normal);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.donutHole {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-normal);
+}
+
+.totalNumber {
+  font-size: calc(var(--font-size-3xl) * var(--font-scale));
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.totalLabel {
+  font-size: calc(var(--font-size-xs) * var(--font-scale));
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  min-width: 220px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: calc(var(--font-size-sm) * var(--font-scale));
+}
+
+.colorBadge {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--border-radius-full);
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  flex-grow: 1;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.legendValue {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  white-space: nowrap;
+}

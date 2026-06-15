@@ -1,0 +1,437 @@
+.loadingContainer {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  color: var(--color-primary);
+}
+
+.emptyContainer {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.emptyCard {
+  text-align: center;
+  max-width: 500px;
+  padding: var(--spacing-2xl) !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.emptyIcon {
+  color: var(--color-primary);
+  width: 48px;
+  height: 48px;
+}
+
+.emptyCta {
+  margin-top: var(--spacing-xs);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.title {
+  font-size: calc(var(--font-size-3xl) * var(--font-scale));
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.subtitle {
+  font-size: calc(var(--font-size-sm) * var(--font-scale));
+  color: var(--color-text-secondary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+}
+
+.activePanelColumn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.activeCard {
+  padding: var(--spacing-xl) !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.activeHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-primary);
+}
+
+.activeTitleIcon {
+  width: 28px;
+  height: 28px;
+}
+
+.cardSubtitle {
+  font-size: calc(var(--font-size-xs) * var(--font-scale));
+  color: var(--color-text-secondary);
+  margin-top: -4px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.divider {
+  border: 0;
+  border-top: 1.5px solid var(--color-border);
+  margin: var(--spacing-sm) 0;
+}
+
+.emptyCommitments {
+  text-align: center;
+  padding: var(--spacing-2xl) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin: auto 0;
+}
+
+.emptyCommitIcon {
+  color: var(--color-text-secondary);
+  opacity: 0.5;
+}
+
+.commitmentsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.commitmentItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+  border: 1.5px solid var(--color-border);
+  transition: var(--transition-normal);
+  gap: var(--spacing-md);
+}
+
+.loggedBg {
+  background-color: var(--color-success-bg) !important;
+  border-color: var(--color-success) !important;
+}
+
+.commitmentDetails {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.commitmentDetails h3 {
+  font-size: calc(var(--font-size-base) * var(--font-scale));
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.commitmentCategoryIcon {
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: rgba(46, 94, 78, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--border-radius-full);
+}
+
+.weeklySavingLabel {
+  display: block;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: calc(var(--font-size-xs) * var(--font-scale));
+  margin-top: 2px;
+}
+
+.commitmentControls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+}
+
+.logBtn {
+  font-size: calc(var(--font-size-xs) * var(--font-scale));
+  padding: 0.4rem 0.9rem;
+  font-weight: 700;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  padding: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.removeBtn:hover {
+  color: var(--color-error);
+}
+
+.aggregateSavings {
+  display: flex;
+  gap: var(--spacing-md);
+  background-color: var(--color-success-bg);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--color-success);
+  margin-top: var(--spacing-md);
+  text-align: left;
+}
+
+.aggregateSavings h4 {
+  font-size: calc(var(--font-size-sm) * var(--font-scale));
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.aggregateSavings p {
+  font-size: calc(var(--font-size-xs) * var(--font-scale));
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+.savingsIcon {
+  color: var(--color-success);
+  flex-shrink: 0;
+}
+
+.catalogColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.catalogHeaderRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.catalogHeaderRow h2 {
+  font-size: calc(var(--font-size-xl) * var(--font-scale));
+}
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  width: 100%;
+}
+
+.tab {
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--border-radius-full);
+  border: 1.5px solid var(--color-border);
+  background-color: var(--color-surface);
+  font-size: calc(var(--font-size-xs) * var(--font-scale));
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  white-space: nowrap;
+}
+
+.tab:hover {
+  border-color: var(--color-primary);
+}
+
+.activeTab {
+  background-color: var(--color-primary) !important;
+  color: var(--color-surface) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.catalogGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+.habitCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg) !important;
+  min-height: 280px;
+}
+
+.committedBorder {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 4px 12px rgba(46, 94, 78, 0.12) !important;
+}
+
+.habitCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.habitCategoryBadge {
+  font-size: calc(var(--font-size-xs) * var(--font-scale));
+  font-weight: 700;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.habitTags {
+  display: flex;
+  gap: 4px;
+}
+
+.tag {
+  border: 1px solid var(--color-border);
+  padding: 2px 8px;
+  border-radius: var(--border-radius-full);
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.impactTag {
+  background-color: rgba(46, 94, 78, 0.1);
+  color: var(--color-primary);
+  padding: 2px 8px;
+  border-radius: var(--border-radius-full);
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+[data-theme='dark'] .impactTag {
+  background-color: rgba(143, 191, 160, 0.15);
+}
+
+.habitTitle {
+  font-size: calc(var(--font-size-base) * var(--font-scale));
+  font-weight: 700;
+  margin: 4px 0 0 0;
+}
+
+.habitDescription {
+  font-size: calc(var(--font-size-sm) * var(--font-scale));
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.savingsBox {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  border-left: 3px solid var(--color-primary);
+  padding-left: var(--spacing-sm);
+  margin: 4px 0;
+}
+
+.savingsValue {
+  font-weight: 800;
+  color: var(--color-primary);
+  font-size: calc(var(--font-size-base) * var(--font-scale));
+}
+
+.savingsLabel {
+  font-size: calc(var(--font-size-xs) * var(--font-scale));
+  color: var(--color-text-secondary);
+}
+
+.analogyText {
+  font-size: calc(var(--font-size-xs) * var(--font-scale));
+  color: var(--color-text-secondary);
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.cardAction {
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+  width: 100%;
+}
+
+.actionBtn {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: calc(var(--font-size-xs) * var(--font-scale));
+}
+
+/* Animations & Responsive */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (min-width: 576px) {
+  .commitmentItem {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .catalogGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .catalogHeaderRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .tabs {
+    width: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+}

@@ -1,0 +1,148 @@
+@import '../styles/variables.css';
+
+/* CSS Reset and Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  overflow-x: hidden;
+}
+
+/* Accessibility Focus Indicator */
+*:focus-visible {
+  outline: 3px solid var(--color-focus) !important;
+  outline-offset: 2px !important;
+}
+
+/* Keyboard Skip Navigation Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--spacing-md);
+  background: var(--color-primary);
+  color: var(--color-surface);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  z-index: 9999;
+  text-decoration: none;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: var(--spacing-md);
+}
+
+/* Typography with Scaled Font Size */
+h1 {
+  font-size: calc(var(--font-size-4xl) * var(--font-scale));
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+h2 {
+  font-size: calc(var(--font-size-2xl) * var(--font-scale));
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+h3 {
+  font-size: calc(var(--font-size-xl) * var(--font-scale));
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+p {
+  font-size: calc(var(--font-size-base) * var(--font-scale));
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+small {
+  font-size: calc(var(--font-size-sm) * var(--font-scale));
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: var(--transition-normal);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+button {
+  font-family: inherit;
+  font-size: calc(var(--font-size-base) * var(--font-scale));
+}
+
+/* Main Layout Helper */
+main {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Screen Reader Only Utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Dynamic Reduced Motion class toggled via Settings */
+.reduced-motion * {
+  animation-duration: 0s !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0s !important;
+  scroll-behavior: auto !important;
+}
+
+/* Responsive Rules for Main Padding */
+@media (min-width: 768px) {
+  main {
+    padding: var(--spacing-xl);
+  }
+}

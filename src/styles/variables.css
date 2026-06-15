@@ -1,0 +1,101 @@
+/* Design System Tokens */
+:root {
+  /* Colors - Light Theme (Default) */
+  --color-bg: #DDE5D3;
+  --color-surface: #F7F9F4;
+  --color-primary: #2E5E4E;
+  --color-primary-hover: #1e3f34;
+  --color-text-primary: #1F2A22;
+  --color-text-secondary: #526056;
+  --color-success: #5D8A66;
+  --color-success-bg: #eaf3eb;
+  --color-warning: #D2A24C;
+  --color-warning-bg: #faf4e6;
+  --color-error: #C65A5A;
+  --color-error-bg: #fdf2f2;
+  --color-border: #ccd6c2;
+  --color-focus: #2E5E4E;
+  --color-card-shadow: rgba(31, 42, 34, 0.06);
+
+  /* Typography Scale */
+  --font-family: var(--font-geist-sans), 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;    /* 18px */
+  --font-size-xl: 1.25rem;     /* 20px */
+  --font-size-2xl: 1.5rem;     /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+
+  /* Spacing Scale */
+  --spacing-xs: 0.25rem;       /* 4px */
+  --spacing-sm: 0.5rem;        /* 8px */
+  --spacing-md: 1rem;          /* 16px */
+  --spacing-lg: 1.5rem;        /* 24px */
+  --spacing-xl: 2rem;          /* 32px */
+  --spacing-2xl: 3rem;         /* 48px */
+  --spacing-3xl: 4rem;         /* 64px */
+
+  /* Border Radii */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-full: 9999px;
+
+  /* Transitions */
+  --transition-normal: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Font Scaling Options (Overridden dynamically) */
+  --font-scale: 1;
+}
+
+/* Dark Mode Color Overrides */
+[data-theme='dark'] {
+  --color-bg: #121A15;
+  --color-surface: #1B241F;
+  --color-primary: #8FBFA0;
+  --color-primary-hover: #abd1b9;
+  --color-text-primary: #F5F7F4;
+  --color-text-secondary: #A2B0A6;
+  --color-success: #77A380;
+  --color-success-bg: #1d2a21;
+  --color-warning: #E4B968;
+  --color-warning-bg: #2d2618;
+  --color-error: #DF7C7C;
+  --color-error-bg: #301d1d;
+  --color-border: #2c3830;
+  --color-focus: #8FBFA0;
+  --color-card-shadow: rgba(0, 0, 0, 0.25);
+}
+
+/* High Contrast Mode Overrides (WCAG AAA Optimized) */
+[data-theme='high-contrast'] {
+  --color-bg: #000000;
+  --color-surface: #121A15;
+  --color-primary: #00FF66;
+  --color-primary-hover: #5eff99;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #FFFF00;
+  --color-success: #00FF00;
+  --color-success-bg: #000000;
+  --color-warning: #FFA500;
+  --color-warning-bg: #000000;
+  --color-error: #FF0000;
+  --color-error-bg: #000000;
+  --color-border: #FFFFFF;
+  --color-focus: #FFFF00;
+  --color-card-shadow: none;
+}
+
+/* Dynamic Font Scaling */
+[data-font-size='large'] {
+  --font-scale: 1.15;
+}
+[data-font-size='extra-large'] {
+  --font-scale: 1.3;
+}

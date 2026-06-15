@@ -1,0 +1,169 @@
+.header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: var(--transition-normal);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  color: var(--color-text-primary);
+  outline: none;
+}
+
+.logoIcon {
+  color: var(--color-primary);
+  width: 28px;
+  height: 28px;
+}
+
+.logoText {
+  font-size: calc(var(--font-size-lg) * var(--font-scale));
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.desktopNav {
+  display: none;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: calc(var(--font-size-sm) * var(--font-scale));
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius-md);
+  transition: var(--transition-normal);
+}
+
+.navLink:hover {
+  background-color: rgba(46, 94, 78, 0.08);
+  color: var(--color-primary);
+}
+
+.active {
+  background-color: rgba(46, 94, 78, 0.12) !important;
+  color: var(--color-primary) !important;
+}
+
+.ctaButton {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition-normal);
+  font-size: calc(var(--font-size-sm) * var(--font-scale));
+}
+
+.ctaButton:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.mobileMenuBtn {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+}
+
+/* Mobile Nav Drawer */
+.mobileNav {
+  display: block;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-md);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobileNavList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  transition: var(--transition-normal);
+}
+
+.mobileNavLink:hover {
+  background-color: rgba(46, 94, 78, 0.08);
+  color: var(--color-primary);
+}
+
+.mobileActive {
+  background-color: rgba(46, 94, 78, 0.12);
+  color: var(--color-primary);
+}
+
+.mobileCtaItem {
+  margin-top: var(--spacing-sm);
+  padding: 0 var(--spacing-md);
+}
+
+.mobileCtaButton {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  padding: 0.75rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .desktopNav {
+    display: block;
+  }
+  
+  .mobileMenuBtn {
+    display: none;
+  }
+  
+  .mobileNav {
+    display: none;
+  }
+}
