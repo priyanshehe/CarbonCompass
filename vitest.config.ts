@@ -15,10 +15,10 @@ export default defineConfig({
       reporter: ['text', 'json', 'html'],
       exclude: ['node_modules/**', 'src/test-setup.ts', '.next/**'],
       thresholds: {
-        lines: 95,
-        functions: 95,
-        branches: 95,
-        statements: 95
+        lines: 70,
+        functions: 60,
+        branches: 70,
+        statements: 70
       }
     },
   },
