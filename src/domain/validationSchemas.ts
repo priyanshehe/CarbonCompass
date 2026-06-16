@@ -1,6 +1,4 @@
 import { z } from 'zod';
-import { TransitType, DietType, EnergyType, ShoppingType } from './types';
-
 export const AssessmentResponseSchema = z.object({
   transportation: z.enum(['car-gas', 'car-hybrid', 'electric', 'transit', 'none'] as const),
   weeklyMileage: z.number()

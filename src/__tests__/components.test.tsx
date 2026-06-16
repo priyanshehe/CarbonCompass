@@ -26,9 +26,8 @@ describe('Accessible Shared UI Components', () => {
   });
 
   it('Card should support keyboard interactions when interactive', async () => {
-    let clicked = false;
     const { container } = render(
-      <Card onClick={() => { clicked = true; }} ariaLabel="Interactive Card">
+      <Card onClick={() => {}} ariaLabel="Interactive Card">
         <div>Card content</div>
       </Card>
     );

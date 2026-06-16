@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { useApp } from '@/context/AppContext';
 import { calculateCarbonFootprint } from '@/domain/carbonCalculator';
@@ -28,8 +27,27 @@ import {
 import styles from './Dashboard.module.css';
 
 export default function DashboardPage() {
-  const router = useRouter();
   const { state, isHydrated } = useApp();
+
+    const calculation = React.useMemo(() => {
+    return calculateCarbonFootprint(state.assessment);
+  }, [state.assessment]);
+  
+  // Calculate potential reductions if habits are committed using useMemo
+  const weeklyHabitSavingKg = React.useMemo(() => {
+    return state.commitments.reduce((sum, commit) => {
+      const habit = HABITS_REGISTRY.find((h) => h.id === commit.habitId);
+      return sum + (habit ? habit.co2ReductionPerWeek : 0);
+    }, 0);
+  }, [state.commitments]);
+  
+  const annualHabitSavingTons = React.useMemo(() => {
+    return parseFloat(((weeklyHabitSavingKg * 52) / 1000).toFixed(2));
+  }, [weeklyHabitSavingKg]);
+
+  const projectedScore = React.useMemo(() => {
+    return parseFloat((calculation.total - annualHabitSavingTons).toFixed(2));
+  }, [calculation.total, annualHabitSavingTons]);
 
   // If loading/hydrating local storage, show a clean loading state
   if (!isHydrated) {
@@ -52,7 +70,7 @@ export default function DashboardPage() {
             You haven&apos;t calculated your carbon footprint yet. Take our 60-second lifestyle assessment 
             to discover your emissions footprint, simulate reductions, and unlock a weekly habit-change action plan.
           </p>
-          <Link href="/assessment" passHref legacyBehavior>
+          <Link href="/assessment">
             <Button variant="primary" className={styles.emptyCta}>
               Start Assessment <ArrowRight size={18} style={{ marginLeft: 8 }} />
             </Button>
@@ -61,28 +79,6 @@ export default function DashboardPage() {
       </div>
     );
   }
-
-  // Calculate footprint details using useMemo
-  const calculation = React.useMemo(() => {
-    return calculateCarbonFootprint(state.assessment);
-  }, [state.assessment]);
-  
-  // Calculate potential reductions if habits are committed using useMemo
-  const weeklyHabitSavingKg = React.useMemo(() => {
-    return state.commitments.reduce((sum, commit) => {
-      const habit = HABITS_REGISTRY.find((h) => h.id === commit.habitId);
-      return sum + (habit ? habit.co2ReductionPerWeek : 0);
-    }, 0);
-  }, [state.commitments]);
-  
-  const annualHabitSavingTons = React.useMemo(() => {
-    return parseFloat(((weeklyHabitSavingKg * 52) / 1000).toFixed(2));
-  }, [weeklyHabitSavingKg]);
-
-  const projectedScore = React.useMemo(() => {
-    return parseFloat((calculation.total - annualHabitSavingTons).toFixed(2));
-  }, [calculation.total, annualHabitSavingTons]);
-
   return (
     <div className={styles.container}>
       {/* Header Summary */}
@@ -92,7 +88,7 @@ export default function DashboardPage() {
           <p className={styles.subtitle}>Based on your transportation, diet, travel, and home utility choices.</p>
         </div>
         <div className={styles.actions}>
-          <Link href="/assessment" passHref legacyBehavior>
+          <Link href="/assessment">
             <Button variant="secondary" className={styles.retakeBtn}>
               <RefreshCw size={14} style={{ marginRight: 8 }} /> Retake Assessment
             </Button>
@@ -223,7 +219,7 @@ export default function DashboardPage() {
               Track your daily habits and see your impact grow.
             </p>
           </div>
-          <Link href="/action-plan" passHref legacyBehavior>
+          <Link href="/action-plan">
             <Button variant="primary" className={styles.actionCta}>
               View Weekly Action Plan <ArrowRight size={18} style={{ marginLeft: 8 }} />
             </Button>

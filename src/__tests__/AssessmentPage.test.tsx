@@ -30,7 +30,7 @@ describe('Assessment Page Integration & Accessibility', () => {
     fireEvent.click(evButton);
     
     // Accessibility check on step 1
-    let results = await axe(container);
+    const results = await axe(container);
     expect(results).toHaveNoViolations();
 
     // Click Next

@@ -49,7 +49,7 @@ export default function AssessmentPage() {
     e: React.KeyboardEvent<HTMLDivElement>,
     options: string[],
     currentValue: string,
-    setValue: (val: any) => void
+    setValue: (val: string) => void
   ) => {
     const currentIndex = options.indexOf(currentValue);
     let nextIndex = currentIndex;
@@ -118,9 +118,14 @@ export default function AssessmentPage() {
     try {
       submitAssessment(validation.data);
       router.push('/dashboard');
-    } catch (e: any) {
-      setErrorMessage(e.message || 'An error occurred during calculation.');
-    }
+    } catch (e: unknown) {
+  const message =
+    e instanceof Error
+      ? e.message
+      : 'An error occurred during calculation.';
+
+  setErrorMessage(message);
+}
   };
 
   return (

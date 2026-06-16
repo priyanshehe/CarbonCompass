@@ -30,7 +30,7 @@ export default function LandingPage() {
             <div className={styles.ctaGroup}>
               {state.hasCompletedAssessment ? (
                 <div className={styles.welcomeBack}>
-                  <Link href="/dashboard" passHref legacyBehavior>
+                  <Link href="/dashboard">
                     <Button variant="primary" className={styles.mainCta}>
                       Go to Dashboard <ArrowRight size={18} style={{ marginLeft: 8 }} />
                     </Button>
@@ -40,7 +40,7 @@ export default function LandingPage() {
                   </Link>
                 </div>
               ) : (
-                <Link href="/assessment" passHref legacyBehavior>
+                <Link href="/assessment">
                   <Button variant="primary" className={styles.mainCta}>
                     Start Assessment <ArrowRight size={18} style={{ marginLeft: 8 }} />
                   </Button>

@@ -35,11 +35,15 @@ export default function SettingsPage() {
 
   const { theme, fontSize, reducedMotion } = state.accessibilitySettings;
 
-  const handleThemeChange = (newTheme: typeof theme) => {
+  const handleThemeChange = (
+  newTheme: 'light' | 'dark' | 'high-contrast'
+) => {
     updateAccessibility({ theme: newTheme });
   };
 
-  const handleFontChange = (newSize: typeof fontSize) => {
+  const handleFontChange = (
+  newSize: 'normal' | 'large' | 'extra-large'
+) => {
     updateAccessibility({ fontSize: newSize });
   };
 
@@ -104,7 +108,7 @@ export default function SettingsPage() {
                   ].map(opt => (
                     <button
                       key={opt.id}
-                      onClick={() => handleThemeChange(opt.id as any)}
+                      onClick={() => handleThemeChange(opt.id as typeof theme)}
                       className={`${styles.choiceBtn} ${theme === opt.id ? styles.choiceSelected : ''}`}
                       role="radio"
                       aria-checked={theme === opt.id}
@@ -134,7 +138,7 @@ export default function SettingsPage() {
                   ].map(opt => (
                     <button
                       key={opt.id}
-                      onClick={() => handleFontChange(opt.id as any)}
+                      onClick={() => handleFontChange(opt.id as typeof fontSize)}
                       className={`${styles.choiceBtn} ${fontSize === opt.id ? styles.choiceSelected : ''}`}
                       role="radio"
                       aria-checked={fontSize === opt.id}

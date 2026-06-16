@@ -19,7 +19,6 @@ import {
   Car, 
   Utensils, 
   ShoppingBag,
-  Sparkles
 } from 'lucide-react';
 import styles from './ActionPlan.module.css';
 
@@ -49,7 +48,7 @@ export default function ActionPlanPage() {
             You must complete the lifestyle assessment before planning actions. 
             Discover your current score first to view matching recommendations.
           </p>
-          <Link href="/assessment" passHref legacyBehavior>
+          <Link href="/assessment">
             <Button variant="primary" className={styles.emptyCta}>
               Take Assessment
             </Button>
@@ -208,7 +207,11 @@ export default function ActionPlanPage() {
                   key={tab.id}
                   role="tab"
                   aria-selected={activeCategory === tab.id}
-                  onClick={() => setActiveCategory(tab.id as any)}
+                  onClick={() =>
+  setActiveCategory(
+    tab.id as 'all' | 'transportation' | 'diet' | 'energy' | 'consumption'
+  )
+}
                   className={`${styles.tab} ${activeCategory === tab.id ? styles.activeTab : ''}`}
                 >
                   {tab.label}

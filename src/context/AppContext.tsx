@@ -6,10 +6,6 @@ import {
   AssessmentResponse, 
   UserHabitCommitment, 
   AccessibilitySettings,
-  TransitType,
-  DietType,
-  EnergyType,
-  ShoppingType
 } from '../domain/types';
 import { 
   AssessmentResponseSchema, 
@@ -92,11 +88,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         // Validate habit commitments array
         if (Array.isArray(rawJson.commitments)) {
           commitments = rawJson.commitments
-            .map((c: unknown) => {
-              const res = HabitCommitmentSchema.safeParse(c);
-              return res.success ? res.data : null;
-            })
-            .filter((c): c is UserHabitCommitment => c !== null);
+  .map((c: unknown) => {
+    const res = HabitCommitmentSchema.safeParse(c);
+    return res.success ? res.data : null;
+  })
+  .filter(
+    (c: UserHabitCommitment | null): c is UserHabitCommitment =>
+      c !== null
+  );
         }
 
         const validatedState: UserProfileState = {

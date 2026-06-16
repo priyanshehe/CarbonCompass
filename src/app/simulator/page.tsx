@@ -72,7 +72,7 @@ export default function SimulatorPage() {
     e: React.KeyboardEvent<HTMLDivElement>,
     options: string[],
     currentValue: string,
-    setValue: (val: any) => void
+    setValue: (val: string) => void
   ) => {
     const currentIndex = options.indexOf(currentValue);
     let nextIndex = currentIndex;
@@ -140,7 +140,7 @@ export default function SimulatorPage() {
             You must establish a baseline footprint before using the simulator. 
             Complete the 60-second assessment first to generate your &quot;Carbon Twin&quot;.
           </p>
-          <Link href="/assessment" passHref legacyBehavior>
+          <Link href="/assessment">
             <Button variant="primary" className={styles.emptyCta}>
               Take Assessment First
             </Button>
@@ -429,7 +429,7 @@ export default function SimulatorPage() {
                     💡 <strong>Next step:</strong> Head to your habit planner to choose active, simple habits 
                     that match your simulated savings goals.
                   </p>
-                  <Link href="/action-plan" passHref legacyBehavior>
+                  <Link href="/action-plan">
                     <Button variant="link" className={styles.recommendationLink}>
                       Configure Action Plan Habits <ArrowRight size={14} style={{ marginLeft: 4 }} />
                     </Button>
