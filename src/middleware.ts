@@ -8,22 +8,18 @@ export function middleware(request: NextRequest) {
   // Enforce a strict CSP
   // Allow 'unsafe-eval' only in development for Fast Refresh / Hot Module Replacement
   const isDev = process.env.NODE_ENV === 'development';
-  const scriptSrc = `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ""}`;
-  
-  const cspHeader = `
-    default-src 'self';
-    ${scriptSrc};
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data: blob:;
-    font-src 'self' data:;
-    connect-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-  `.replace(/\s{2,}/g, ' ').trim();
 
+const scriptSrc = isDev
+  ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
+  : "script-src 'self'";
+const cspHeader = `
+  default-src 'self';
+  ${scriptSrc};
+  style-src 'self' 'unsafe-inline';
+  img-src * data: blob:;
+  font-src * data:;
+  connect-src *;
+`;
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-nonce', nonce);
   requestHeaders.set('content-security-policy', cspHeader);
