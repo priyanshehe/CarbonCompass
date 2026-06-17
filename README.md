@@ -114,7 +114,6 @@ src/
 ├── context/
 ├── domain/
 ├── __tests__/
-└── middleware.ts
 ```
 
 ---
@@ -183,19 +182,6 @@ The goal of Carbon Compass is to make sustainability more approachable by:
 * Demonstrating the impact of everyday choices
 * Encouraging long-term sustainable habits
 * Providing a simple educational tool for climate-conscious decision making
-
----
-
-## 📸 Screenshots
-
-Add screenshots of:
-
-* Home Page
-* Assessment Flow
-* Dashboard
-* Simulator
-* Action Plan
-* Settings Page
 
 ---
 
