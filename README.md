@@ -1,36 +1,208 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌱 Carbon Compass
 
-## Getting Started
+**Know Your Carbon Story. Change It One Habit At A Time.**
 
-First, run the development server:
+Carbon Compass is a privacy-first web application that helps users estimate, understand, and reduce their carbon footprint through personalized lifestyle assessments, simulations, and habit-based action plans.
+
+---
+
+## 🚀 Features
+
+### 📊 Carbon Footprint Assessment
+
+Users answer a guided lifestyle questionnaire covering:
+
+* Transportation habits
+* Weekly travel distance
+* Dietary choices
+* Home energy usage
+* Flight frequency
+* Shopping habits
+
+The assessment generates a personalized carbon profile based on user behavior.
+
+---
+
+### 📈 Carbon Impact Simulator
+
+Experiment with lifestyle changes and instantly see how different choices affect your estimated carbon footprint.
+
+Examples:
+
+* Switching to public transport
+* Reducing flights
+* Adopting a plant-based diet
+* Using renewable energy
+
+---
+
+### ✅ Habit-Based Action Plans
+
+Users can commit to sustainable habits such as:
+
+* Walking or cycling more often
+* Reducing energy consumption
+* Shopping sustainably
+* Reducing food waste
+
+Progress is tracked locally in the browser.
+
+---
+
+### ♿ Accessibility Settings
+
+Built with accessibility in mind:
+
+* Theme selection
+* Adjustable font sizes
+* Reduced motion support
+* Keyboard navigation support
+
+---
+
+### 🔒 Privacy First
+
+Carbon Compass follows a **local-first architecture**.
+
+* No user accounts required
+* No personal data sent to servers
+* Data stored locally in browser storage
+* No tracking or analytics
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+* Next.js 15
+* React 19
+* TypeScript
+
+### Validation & State Management
+
+* Zod
+* React Context API
+
+### Styling
+
+* CSS Modules
+
+### Testing
+
+* Vitest
+* Testing Library
+* Playwright
+
+### Deployment
+
+* Vercel
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+├── app/
+│   ├── assessment/
+│   ├── dashboard/
+│   ├── simulator/
+│   ├── action-plan/
+│   └── settings/
+├── components/
+├── context/
+├── domain/
+├── __tests__/
+└── middleware.ts
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/priyanshehe/CarbonCompass.git
+```
+
+Move into the project folder:
+
+```bash
+cd CarbonCompass
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧪 Testing
 
-To learn more about Next.js, take a look at the following resources:
+Run all tests:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm test
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Run coverage:
 
-## Deploy on Vercel
+```bash
+npm run test:coverage
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Run end-to-end tests:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run test:e2e
+```
+
+---
+
+## 🎯 Project Goals
+
+The goal of Carbon Compass is to make sustainability more approachable by:
+
+* Increasing awareness of personal carbon emissions
+* Demonstrating the impact of everyday choices
+* Encouraging long-term sustainable habits
+* Providing a simple educational tool for climate-conscious decision making
+
+---
+
+## 📸 Screenshots
+
+Add screenshots of:
+
+* Home Page
+* Assessment Flow
+* Dashboard
+* Simulator
+* Action Plan
+* Settings Page
+
+---
+
+GitHub: https://github.com/priyanshehe
+
+---
+
+## 📄 License
+
+This project was created for educational and portfolio purposes.
