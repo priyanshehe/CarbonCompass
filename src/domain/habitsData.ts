@@ -119,11 +119,3 @@ export const HABITS_REGISTRY: Habit[] = [
     metricAnalogy: 'equivalent to saving 24 km of gas car delivery transit.'
   }
 ];
-
-export function getHabitsByCategory(category: string): Habit[] {
-  return HABITS_REGISTRY.filter(h => h.category === category);
-}
-
-export function getHabitsByDifficulty(difficulty: string): Habit[] {
-  return HABITS_REGISTRY.filter(h => h.difficulty === difficulty);
-}

@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
@@ -18,6 +17,15 @@ interface Step {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement> & { 'aria-hidden'?: string }>;
 }
 
+const STEPS: Step[] = [
+    { id: 'transportation', title: 'Daily Commute', description: 'What is your primary mode of transportation?', icon: Car },
+    { id: 'mileage', title: 'Commute Distance', description: 'How many kilometers do you commute/travel in a typical week?', icon: Bike },
+    { id: 'diet', title: 'Food & Diet', description: 'What best describes your typical food consumption habits?', icon: Utensils },
+    { id: 'energy', title: 'Home Energy Source', description: 'What power grid mix or fuel heats/cools your residence?', icon: Flame },
+    { id: 'flights', title: 'Annual Flights', description: 'How many roundtrip flights do you take in an average year?', icon: Plane },
+    { id: 'shopping', title: 'Shopping Style', description: 'What describes your consumption patterns for clothing, electronics, and goods?', icon: ShoppingBag },
+  ];
+
 export default function AssessmentPage() {
   const router = useRouter();
   const { submitAssessment } = useApp();
@@ -33,16 +41,7 @@ export default function AssessmentPage() {
   const [currentStep, setCurrentStep] = useState(0);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const steps: Step[] = [
-    { id: 'transportation', title: 'Daily Commute', description: 'What is your primary mode of transportation?', icon: Car },
-    { id: 'mileage', title: 'Commute Distance', description: 'How many kilometers do you commute/travel in a typical week?', icon: Bike },
-    { id: 'diet', title: 'Food & Diet', description: 'What best describes your typical food consumption habits?', icon: Utensils },
-    { id: 'energy', title: 'Home Energy Source', description: 'What power grid mix or fuel heats/cools your residence?', icon: Flame },
-    { id: 'flights', title: 'Annual Flights', description: 'How many roundtrip flights do you take in an average year?', icon: Plane },
-    { id: 'shopping', title: 'Shopping Style', description: 'What describes your consumption patterns for clothing, electronics, and goods?', icon: ShoppingBag },
-  ];
-
-  const totalSteps = steps.length;
+  const totalSteps = STEPS.length;
   const progressPercent = Math.round(((currentStep + 1) / totalSteps) * 100);
 
   const handleRadioKeyDown = (
@@ -142,12 +141,12 @@ export default function AssessmentPage() {
         </div>
 
         {/* Question Panel */}
-        <Card className={styles.questionCard} role="main" aria-label={steps[currentStep].title}>
+        <Card className={styles.questionCard} role="main" aria-label={STEPS[currentStep].title}>
           <div className={styles.questionHeader}>
-            {React.createElement(steps[currentStep].icon, { className: styles.stepIcon, 'aria-hidden': 'true' })}
-            <h2 className={styles.stepTitle}>{steps[currentStep].title}</h2>
+            {React.createElement(STEPS[currentStep].icon, { className: styles.stepIcon, 'aria-hidden': 'true' })}
+            <h2 className={styles.stepTitle}>{STEPS[currentStep].title}</h2>
           </div>
-          <p className={styles.stepDescription}>{steps[currentStep].description}</p>
+          <p className={styles.stepDescription}>{STEPS[currentStep].description}</p>
 
           <hr className={styles.divider} aria-hidden="true" />
 
