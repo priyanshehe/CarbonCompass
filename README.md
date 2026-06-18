@@ -1,77 +1,206 @@
 # 🌱 Carbon Compass
 
-**Know Your Carbon Story. Change It One Habit At A Time.**
+### Know Your Carbon Story. Change It One Habit At A Time.
 
-Carbon Compass is a privacy-first web application that helps users estimate, understand, and reduce their carbon footprint through personalized lifestyle assessments, simulations, and habit-based action plans.
+Carbon Compass is a privacy-first sustainability platform that helps users measure, understand, and reduce their carbon footprint through personalized lifestyle assessments, impact simulations, and actionable habit recommendations.
+
+Designed to make climate awareness practical and accessible, Carbon Compass transforms everyday lifestyle choices into meaningful environmental insights.
 
 ---
 
-## 🚀 Features
+## 🚀 Highlights
 
-### 📊 Carbon Footprint Assessment
+* 📊 Personalized Carbon Footprint Assessment
+* 📈 Real-Time Carbon Impact Simulator
+* ✅ Habit-Based Sustainability Action Plans
+* ♿ Accessibility-Focused Design
+* 🔒 Local-First Privacy Architecture
+* 🧪 Comprehensive Automated Testing
+* ⚡ Fast, Responsive, Modern Web Experience
 
-Users answer a guided lifestyle questionnaire covering:
+---
 
-* Transportation habits
+## 🏅 Quality Metrics
+
+| Metric                | Status             |
+| --------------------- | ------------------ |
+| Production Build      | ✅ Passing          |
+| TypeScript Validation | ✅ Passing          |
+| ESLint Validation     | ✅ Clean            |
+| Automated Tests       | ✅ 21 Tests Passing |
+| Accessibility Support | ✅ Implemented      |
+| Responsive Design     | ✅ Supported        |
+| Local-First Privacy   | ✅ Implemented      |
+
+---
+
+## 🌍 The Problem
+
+Many people want to live more sustainably but struggle to understand how their daily choices affect their environmental impact.
+
+Most carbon calculators simply generate a number without explaining:
+
+* Why emissions are high
+* Which lifestyle factors matter most
+* How improvements can be made
+* What actions create meaningful reductions
+
+Carbon Compass bridges this gap by combining assessment, education, simulation, and habit formation into a single user experience.
+
+---
+
+## 💡 Solution
+
+Carbon Compass helps users:
+
+1. Assess their current lifestyle emissions.
+2. Understand major carbon contributors.
+3. Simulate lifestyle changes instantly.
+4. Commit to sustainable habits.
+5. Track progress locally and privately.
+
+The goal is not only awareness—but action.
+
+---
+
+## 📊 Personalized Carbon Footprint Assessment
+
+Users complete a guided assessment covering:
+
+### 🚗 Transportation
+
+* Primary transportation method
 * Weekly travel distance
-* Dietary choices
-* Home energy usage
-* Flight frequency
-* Shopping habits
 
-The assessment generates a personalized carbon profile based on user behavior.
+### 🍽 Diet & Food
+
+* Meat consumption
+* Vegetarian and vegan lifestyles
+* General eating habits
+
+### ⚡ Home Energy
+
+* Energy source selection
+* Renewable energy usage
+
+### ✈️ Travel
+
+* Annual flight frequency
+
+### 🛍 Consumption
+
+* Shopping behavior
+* Sustainable purchasing habits
+
+The system generates a personalized carbon profile based on these lifestyle factors.
 
 ---
 
-### 📈 Carbon Impact Simulator
+## 📈 Carbon Impact Simulator
 
-Experiment with lifestyle changes and instantly see how different choices affect your estimated carbon footprint.
+The simulator allows users to explore "what-if" scenarios and instantly visualize potential carbon reductions.
 
-Examples:
+Examples include:
 
-* Switching to public transport
-* Reducing flights
+* Switching to public transportation
+* Driving fewer kilometers
+* Taking fewer flights
 * Adopting a plant-based diet
-* Using renewable energy
+* Moving to renewable energy
+* Reducing consumption habits
+
+Changes are reflected immediately to help users understand their environmental impact.
 
 ---
 
-### ✅ Habit-Based Action Plans
+## ✅ Habit-Based Action Plans
 
-Users can commit to sustainable habits such as:
+Carbon Compass provides practical recommendations that users can commit to.
 
-* Walking or cycling more often
-* Reducing energy consumption
-* Shopping sustainably
+Example habits include:
+
+* Walking or cycling short trips
+* Using public transportation
 * Reducing food waste
+* Lowering household energy usage
+* Purchasing secondhand products
+* Repairing instead of replacing items
 
-Progress is tracked locally in the browser.
+Habit commitments and completion tracking are stored locally in the browser.
 
 ---
 
-### ♿ Accessibility Settings
+## ♿ Accessibility Features
 
-Built with accessibility in mind:
+Accessibility was a core consideration throughout development.
 
-* Theme selection
+Features include:
+
+* Keyboard navigation support
+* Accessible form controls
 * Adjustable font sizes
 * Reduced motion support
-* Keyboard navigation support
+* Multiple theme options
+* High-contrast mode support
+* Screen-reader-friendly content
+
+The application aims to provide an inclusive experience for all users.
 
 ---
 
-### 🔒 Privacy First
+## 🔒 Privacy First
 
-Carbon Compass follows a **local-first architecture**.
+Carbon Compass follows a local-first architecture.
 
-* No user accounts required
-* No personal data sent to servers
-* Data stored locally in browser storage
-* No tracking or analytics
+### No User Accounts
+
+Users can use the application without creating an account.
+
+### No Data Collection
+
+Personal assessment data is never transmitted to external servers.
+
+### No Tracking
+
+No analytics, advertising trackers, or behavioral monitoring are used.
+
+### Local Storage Only
+
+Assessment results, commitments, and preferences remain on the user's device.
+
+Your data stays under your control.
 
 ---
 
-## 🛠 Tech Stack
+## 🏗 Architecture Overview
+
+```text
+User Assessment
+       ↓
+Validation Layer (Zod)
+       ↓
+Carbon Calculation Engine
+       ↓
+Dashboard & Insights
+       ↓
+Simulator
+       ↓
+Habit Recommendations
+```
+
+The architecture separates:
+
+* UI Components
+* Domain Logic
+* Validation
+* State Management
+* Testing
+
+making the application maintainable and scalable.
+
+---
+
+## 🛠 Technology Stack
 
 ### Frontend
 
@@ -79,9 +208,12 @@ Carbon Compass follows a **local-first architecture**.
 * React 19
 * TypeScript
 
-### Validation & State Management
+### Validation
 
 * Zod
+
+### State Management
+
 * React Context API
 
 ### Styling
@@ -110,35 +242,86 @@ src/
 │   ├── simulator/
 │   ├── action-plan/
 │   └── settings/
+│
 ├── components/
+│
 ├── context/
+│
 ├── domain/
+│
 ├── __tests__/
+│
+└── styles/
 ```
+
+---
+
+## 🧪 Testing & Quality Assurance
+
+Carbon Compass includes multiple layers of testing.
+
+### Unit Testing
+
+Validates:
+
+* Carbon calculations
+* Validation schemas
+* Domain logic
+
+### Component Testing
+
+Validates:
+
+* Buttons
+* Forms
+* Interactive UI components
+
+### Integration Testing
+
+Validates:
+
+* Assessment flow
+* Dashboard functionality
+* Action plan workflows
+
+### End-to-End Testing
+
+Validates:
+
+* Complete user journeys
+* Accessibility interactions
+* State persistence
+
+### Current Test Status
+
+* ✅ 7 Test Suites Passing
+* ✅ 21 Tests Passing
+* ✅ Build Passing
+* ✅ Lint Passing
 
 ---
 
 ## ⚙️ Installation
 
-Clone the repository:
+### Clone Repository
 
 ```bash
 git clone https://github.com/priyanshehe/CarbonCompass.git
 ```
 
-Move into the project folder:
+### Navigate to Project
 
 ```bash
 cd CarbonCompass
 ```
 
-Install dependencies:
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-Start development server:
+### Run Development Server
 
 ```bash
 npm run dev
@@ -152,21 +335,39 @@ http://localhost:3000
 
 ---
 
-## 🧪 Testing
+## 🧪 Available Commands
 
-Run all tests:
+### Start Development
+
+```bash
+npm run dev
+```
+
+### Build Production Version
+
+```bash
+npm run build
+```
+
+### Run Linting
+
+```bash
+npm run lint
+```
+
+### Run Tests
 
 ```bash
 npm test
 ```
 
-Run coverage:
+### Run Coverage
 
 ```bash
 npm run test:coverage
 ```
 
-Run end-to-end tests:
+### Run End-to-End Tests
 
 ```bash
 npm run test:e2e
@@ -176,14 +377,43 @@ npm run test:e2e
 
 ## 🎯 Project Goals
 
-The goal of Carbon Compass is to make sustainability more approachable by:
+Carbon Compass was created to:
 
-* Increasing awareness of personal carbon emissions
-* Demonstrating the impact of everyday choices
-* Encouraging long-term sustainable habits
-* Providing a simple educational tool for climate-conscious decision making
+* Increase awareness of personal carbon emissions
+* Educate users about sustainable lifestyle choices
+* Demonstrate the impact of everyday decisions
+* Encourage long-term environmental responsibility
+* Make climate action more accessible and actionable
 
 ---
+
+## 🌎 Why Carbon Compass?
+
+Many sustainability tools focus solely on measurement.
+
+Carbon Compass focuses on:
+
+* Understanding
+* Education
+* Simulation
+* Habit Formation
+* Long-Term Change
+
+The objective is not simply to calculate emissions, but to empower users to reduce them.
+
+---
+
+## 🏆 Built For
+
+**PromptWar Virtual 2026**
+
+A project focused on creating meaningful digital solutions that address real-world challenges through technology, accessibility, privacy, and user-centered design.
+
+---
+
+## 👨‍💻 Author
+
+**Priyanshu Tiwary**
 
 GitHub: https://github.com/priyanshehe
 
@@ -191,4 +421,4 @@ GitHub: https://github.com/priyanshehe
 
 ## 📄 License
 
-This project was created for educational and portfolio purposes.
+This project was created for educational, portfolio, and competition purposes.
